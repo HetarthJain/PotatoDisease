@@ -1,0 +1,4 @@
+docker run -t --rm -p 1244:1244 -v C:\Users\hetar\OneDrive\Documents\python\PotatoDisease:/PotatoDisease tensorflow/serving --rest_api_port=1244 --model_config_file=/PotatoDisease/models/models.config
+
+// this command builds new containers
+docker run -p 1244:1244 -d --mount type=bind,source=C:\Users\hetar\OneDrive\Documents\python/PotatoDisease/models/,target=/models/ --mount type=bind,source=C:\Users\hetar\OneDrive\Documents\python/PotatoDisease/models.config/,target=/models/models.config -t tensorflow/serving --model_config_file=/PotatoDisease/models.config
